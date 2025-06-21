@@ -5,7 +5,7 @@
     "context": ".."
   },
   //"postCreateCommand": "make build",
-  "postCreateCommand": "./.devcontainer/setup-creds.sh && make build",
+  "postCreateCommand": "devcontainer/setup-creds.sh && make build",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
