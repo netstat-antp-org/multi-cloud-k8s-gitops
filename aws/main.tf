@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.33.0"
+    }
+  }
+}
+
 provider "aws" {
   region = var.aws_region
 }
@@ -23,13 +32,16 @@ module "vpc" {
 # Create an EKS Cluster
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version         = "20.8.3"  # Latest stable EKS module
+  version         = "19.21.0"  # Downgraded to avoid GPU spec errors
 
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
 
   vpc_id          = module.vpc.vpc_id
   subnet_ids      = module.vpc.public_subnets
+
+  cluster_endpoint_public_access  = true
+  cluster_endpoint_private_access = true
 
   eks_managed_node_groups = {
     default = {

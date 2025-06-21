@@ -1,0 +1,12 @@
+
+
+#eks get-creds
+aws eks update-kubeconfig --region us-east-1 --name multi-cloud-eks
+
+
+#aks get-creds
+az aks get-credentials --resource-group multi-cloud-aks-rg --name multi-cloud-aks
+
+
+#gke get-creds
+gcloud container clusters get-credentials multi-cloud-gke2 --region us-east1
