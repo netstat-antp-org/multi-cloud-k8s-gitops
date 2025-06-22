@@ -1,6 +1,7 @@
 # Terraform state and plan files
 *.tfstate
 *.tfstate.backup
+*.terraform.tfstate.lock.info
 *.tfplan
 
 # Terraform lock file
