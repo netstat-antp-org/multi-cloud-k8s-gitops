@@ -1,0 +1,11 @@
+
+
+#output of kubectl config get-contexts
+alias ctx-eks='kubectl config use-context arn:aws:eks:us-east-1:401989963502:cluster/multi-cloud-eks'
+alias ctx-gcp='kubectl config use-context gke_multi-cloud-k8s-461703_us-east1_multi-cloud-gke2'
+alias ctx-aks='kubectl config use-context multi-cloud-aks'
+
+#alias for switching contexts
+ctx-eks  # AWS EKS
+ctx-gcp  # GCP GKE
+ctx-aks  # Azure AKS

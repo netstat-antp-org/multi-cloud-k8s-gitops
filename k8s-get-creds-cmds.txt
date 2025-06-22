@@ -1,6 +1,7 @@
 
 
 #eks get-creds
+# NOTE: cluster_endpoint_public_access must be set to true in Terraform to access EKS from Codespaces
 aws eks update-kubeconfig --region us-east-1 --name multi-cloud-eks
 
 
